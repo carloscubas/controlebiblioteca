@@ -10,13 +10,21 @@
 </head>
 <body>
 	<div>
-		<a href="/biblioteca/livros">Livros</a>
+		<a href="/controlebiblioteca/livros">Livros</a>
 	</div>
-
-	<form:form action="/biblioteca/livros" method="post" commandName="livro">
+	
+	<form:form action="/controlebiblioteca/livros" method="post" commandName="livro" enctype="multipart/form-data" >
 		<form:input path="id" type="hidden" id="id" />
+
 		<div>
-			<label for="name"><strong>Nome: </strong> </label> <form:input path="titulo" size="100" type="text"/>
+			<label for="pathCapa">Capa do livro</label> 
+			<input type="file" name="capaurl" />
+			<span style="color: red;"><form:errors path="capa" /></span>
+		</div>
+
+		<div>
+			<label for="name"><strong>Nome: </strong> </label> 
+			<form:input path="titulo" size="100" type="text"/>
 			<span style="color: red;"><form:errors path="titulo"/></span>
 		</div>
 

@@ -10,7 +10,10 @@ import org.springframework.format.datetime.DateFormatter;
 import org.springframework.format.datetime.DateFormatterRegistrar;
 import org.springframework.format.support.DefaultFormattingConversionService;
 import org.springframework.format.support.FormattingConversionService;
+import org.springframework.web.multipart.MultipartResolver;
+import org.springframework.web.multipart.support.StandardServletMultipartResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
@@ -46,7 +49,7 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter {
 		DefaultFormattingConversionService conversionService = new DefaultFormattingConversionService(true);
 
 		DateFormatterRegistrar registrar = new DateFormatterRegistrar();
-		registrar.setFormatter(new DateFormatter("yyyy-MM-dd"));
+		registrar.setFormatter(new DateFormatter("dd/MM/yyyy"));
 		registrar.registerFormatters(conversionService);
 		return conversionService;
 	}
@@ -54,6 +57,17 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter {
     @Override
     public void addFormatters(FormatterRegistry registry) {
         //registry.addConverter(livroConverter);
+    }
+    
+	@Bean
+	public MultipartResolver multipartResolver() {
+		return new StandardServletMultipartResolver();
+	}
+	
+	@Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/uploads/**")
+                .addResourceLocations("file:/Volumes/Arquivos/FIB/POS/workspace/controlebiblioteca/");
     }
 
 }

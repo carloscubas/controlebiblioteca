@@ -10,9 +10,9 @@
 </head>
 <body>	
 	<div>
-		<a href="/biblioteca/autores">Autor</a>
+		<a href="/controlebiblioteca/autores">Autor</a>
 	</div>
-	<form:form action="/biblioteca/autores" method="post" commandName="autor">
+	<form:form action="/controlebiblioteca/autores" method="post" commandName="autor">
 		<form:input path="id" type="hidden" id="id" />
 		<div>
       		<label for="name">Nome</label>

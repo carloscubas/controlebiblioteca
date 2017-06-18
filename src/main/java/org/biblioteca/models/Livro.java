@@ -9,7 +9,6 @@ import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -25,7 +24,7 @@ public class Livro {
 	
 	@NotBlank(message = "Título é obrigatório")
 	private String titulo;
-	
+		
 	@Lob
 	@NotBlank(message = "Descrição é obrigatório")
 	@Size(max = 200, message = "A descrição não pode ter mais que 200 caracteres")
@@ -39,6 +38,8 @@ public class Livro {
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	@NotNull(message = "Data de lançamento é obrigatório")
 	private Date dataLancamento;
+	
+	private String capa;
 
 	public Integer getId() {
 		return id;
@@ -84,10 +85,18 @@ public class Livro {
 		this.dataLancamento = dataLancamento;
 	}
 
+	public String getCapa() {
+		return capa;
+	}
+
+	public void setCapa(String capa) {
+		this.capa = capa;
+	}
+
 	@Override
 	public String toString() {
-		return "Livro [id=" + id + ", titulo=" + titulo + ", descricao=" + descricao + ", autor=" + autor
-				+ ", dataLancamento=" + dataLancamento + "]";
+		return "Livro [id=" + id + ", titulo=" + titulo + ", capa=" + capa + ", descricao=" + descricao + ", autor="
+				+ autor + ", dataLancamento=" + dataLancamento + "]";
 	}
-	
+
 }

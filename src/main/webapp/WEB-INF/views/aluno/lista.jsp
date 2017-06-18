@@ -9,8 +9,8 @@
 <title>Livro</title>
 </head>
 <body>
-	<a href="/biblioteca/"> Home </a>
-	<a href="/biblioteca/alunos/form"> Incluir Aluno </a>
+	<a href="<c:url value = "/"/>"> Home </a>
+	<a href="<c:url value = "/alunos/form"/>"> Incluir Aluno </a>
 
 	<table>
 		<tr>
@@ -23,8 +23,10 @@
 			<tr>
 				<td>${aluno.nome}</td>
 				<td>${aluno.registroAcademico}</td>
-				<td><a href="/biblioteca/alunos/${aluno.id}">Atualizar</a></td>
+				<td><a href="<c:url value="/alunos/"/>${aluno.id}">Atualizar</a></td>
 				<td><a href="">Excluir</a></td>
+				
+				
 			</tr>
 		</c:forEach>
 	</table>

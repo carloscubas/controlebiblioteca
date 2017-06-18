@@ -10,9 +10,9 @@
 </head>
 <body>	
 	<div>
-		<a href="/biblioteca/alunos">Alunos</a>
+		<a href="<c:url value="/alunos"/>">Alunos</a>
 	</div>
-	<form:form action="/biblioteca/alunos" method="post" commandName="aluno">
+	<form:form action="/controlebiblioteca/alunos" method="post" commandName="aluno">
 		<form:input path="id" type="hidden" id="id" />
 		<div>
       		<label for="name">Nome</label>

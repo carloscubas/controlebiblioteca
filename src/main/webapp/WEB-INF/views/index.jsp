@@ -9,8 +9,9 @@
 <title>Livro</title>
 </head>
 <body>
-	<a href="/biblioteca/livros">Livros</a>
-	<a href="/biblioteca/autores">Autores</a>
-	<a href="/biblioteca/alunos">Alunos</a>
+	<a href="<c:url value = "/livros"/>">Livros</a>
+	<a href="<c:url value = "/autores"/>">Autores</a>
+	<a href="<c:url value = "/alunos"/>">Alunos</a>
 </body>
 </html>
+

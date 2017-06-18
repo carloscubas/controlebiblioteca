@@ -9,8 +9,8 @@
 <title>Livro</title>
 </head>
 <body>
-	<a href="/biblioteca/"> Home </a>
-	<a href="/biblioteca/autores/form"> Incluir Autor </a>
+	<a href="/controlebiblioteca/"> Home </a>
+	<a href="/controlebiblioteca/autores/form"> Incluir Autor </a>
 
 	<table>
 		<tr>
@@ -21,7 +21,7 @@
 		<c:forEach items="${autores}" var="autor">
 			<tr>
 				<td>${autor.nome}</td>
-				<td><a href="/biblioteca/autores/${autor.id}">Atualizar</a></td>
+				<td><a href="/controlebiblioteca/autores/${autor.id}">Atualizar</a></td>
 				<td><a href="">Excluir</a></td>
 			</tr>
 		</c:forEach>
